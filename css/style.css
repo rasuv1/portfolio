@@ -39,6 +39,10 @@ body{
   z-index: 100;
 }
 
+.header.sticky{
+  border-bottom: .1rem solid rgba(0, 0,0,.2);
+}
+
 .logo{
   font-size: 2.5rem;
   color: var(--text-color);
@@ -61,14 +65,16 @@ body{
   display: none;
   font-size: 3.6rem;
   color: var(--text-color);
+  user-select: none;
 }
+
+
 
 section{
   min-height: 100vh;
   padding: 10rem 9% 2rem;
   overflow-x: hidden;
 }
-
 
 .home{
   display: flex;
@@ -327,7 +333,7 @@ span{
   box-shadow: 0 0 5rem var(--main-color);
 }
 .portfolio-layer a img{
-  width: 2rem;
+  width: 2.5rem;
 }
 
 
@@ -399,4 +405,130 @@ span{
 }
 .footerIconTop a img{
   width: 2.5rem;
+}
+
+/* BREAKPOINTS */
+
+@media (max-width: 1200px){
+  html{
+    font-size: 55%;
+  }
+}
+
+@media (max-width: 991px){
+  html{
+   .header{
+     padding: 2rem 3%;
+   }
+   section{
+     padding: 10rem 3% 2rem;
+   }
+   
+  .services{
+    padding-bottom: 7rem;
+  }
+   
+   
+  .portfolio{
+    padding-bottom: 7rem;
+  }
+  
+ .contact{
+   min-height: auto;
+ }
+   .footer{
+     padding: 2rem 3%;
+   }
+  }
+}
+
+@media (max-width: 768px){
+  #menu-icon{
+    display: block;
+  }
+ .navBar{
+   position: absolute;
+   top: 100%;
+   left: 0;
+   width: 100%;
+   padding: 1rem 3%;
+   background: var(--bg-color);
+   border-top: .1rem solid rgba(0,0,0,.2);
+   box-shadow: 0 .5rem 1rem rgba(0,0,0,.2);
+   display: none;
+ }
+.navBar.active {
+  display: block;
+}
+.navBar a{
+  display: block;
+  font-size: 2rem;
+  margin: 3rem 0;
+}
+.home{
+  flex-direction: column;
+}
+.home-content h3{
+  font-size: 2.6rem;
+}
+.home-content h1{
+  font-size: 5rem;
+}
+.home-img img{
+  width: 70vw;
+  margin-top: 4rem;
+}
+.about{
+  flex-direction: column-reverse;
+}
+.about img{
+  width: 70vw;
+  margin-top: 4rem;
+}
+
+.services h2{
+  margin-bottom: 3rem;
+}
+.portfolio h2{
+  margin-bottom: 3rem;
+}
+.portfolio-container{
+  grid-template-columns: repeat(2,1fr);
+}
+}
+
+
+@media (max-width: 617px){
+ .portfolio-container{
+   grid-template-columns: 1fr;
+   
+ }
+}
+
+@media (max-width: 450px) {
+  html{
+    font-size: 50%;
+  }
+ .contact form .input-box input{
+   width: 100%;
+ }
+}
+
+@media (max-width: 365px) {
+ .home{
+   justify-content: center;
+ }
+ .home-img img{
+   width: 90vw;
+ }
+.about-img img{
+  width: 90vw;
+}
+.footer{
+  flex-direction: column-reverse;
+}
+.footer p{
+  text-align: center;
+  margin-top: 2rem;
+}
 }
